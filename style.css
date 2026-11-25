@@ -1,0 +1,229 @@
+/* Dayavel privacy policy — kleuren uit app-thema (GoudTokens / DsKleur).
+   Navy #060C16, vlak #0F1724 / #152033, tekst #F5F6F8 / #A9B1BE / #828C9E,
+   accent #E2BA6C, knoptekst #2A1A06. Geen externe fonts, CDN's of trackers. */
+
+:root {
+  --navy: #060c16;
+  --vlak1: #0f1724;
+  --vlak2: #152033;
+  --tekst: #f5f6f8;
+  --tekst-sec: #a9b1be;
+  --tekst-ter: #828c9e;
+  --accent: #e2ba6c;
+  --accent-tekst: #2a1a06;
+  --rand: rgba(255, 255, 255, 0.08);
+  --radius: 20px;
+  --maat: 40rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--navy);
+  color: var(--tekst);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  background: var(--navy);
+  color: var(--tekst);
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.15em;
+}
+
+a:hover,
+a:focus-visible {
+  color: #ffe8aa;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  transform: translateY(-200%);
+  background: var(--accent);
+  color: var(--accent-tekst);
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.skip:focus {
+  transform: none;
+}
+
+.wrap {
+  width: min(var(--maat), calc(100% - 2.5rem));
+  margin: 0 auto;
+  padding: 1.5rem 0 3.5rem;
+}
+
+header.top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 1.25rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rand);
+}
+
+.merk {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+}
+
+nav.talen {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+nav.talen a {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--tekst-sec);
+  border: 1px solid var(--rand);
+  background: var(--vlak1);
+}
+
+nav.talen a:hover,
+nav.talen a:focus-visible {
+  color: var(--tekst);
+  border-color: var(--accent);
+}
+
+nav.talen a[aria-current="page"] {
+  background: var(--accent);
+  color: var(--accent-tekst);
+  border-color: var(--accent);
+  font-weight: 650;
+}
+
+nav.talen a[aria-current="page"]:hover,
+nav.talen a[aria-current="page"]:focus-visible {
+  color: var(--accent-tekst);
+}
+
+main h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  line-height: 1.2;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.meta {
+  margin: 0 0 0.35rem;
+  color: var(--tekst-ter);
+  font-size: 0.92rem;
+}
+
+.intro {
+  margin: 1.5rem 0 0;
+  padding: 1.1rem 1.2rem;
+  background: var(--vlak1);
+  border: 1px solid var(--rand);
+  border-radius: var(--radius);
+  color: var(--tekst-sec);
+}
+
+h2 {
+  margin: 2.1rem 0 0.7rem;
+  font-size: 1.15rem;
+  line-height: 1.3;
+  font-weight: 650;
+  color: var(--tekst);
+}
+
+p {
+  margin: 0 0 0.85rem;
+  color: var(--tekst-sec);
+}
+
+ul {
+  margin: 0 0 0.85rem;
+  padding: 0 0 0 1.2rem;
+  color: var(--tekst-sec);
+}
+
+li {
+  margin: 0 0 0.4rem;
+}
+
+li::marker {
+  color: var(--accent);
+}
+
+footer.eind {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rand);
+  color: var(--tekst-ter);
+  font-size: 0.9rem;
+}
+
+footer.eind p {
+  color: inherit;
+  margin: 0;
+}
+
+@media (max-width: 40rem) {
+  .wrap {
+    width: calc(100% - 2rem);
+  }
+}
+
+@media print {
+  :root {
+    --navy: #ffffff;
+    --vlak1: #f4f4f4;
+    --vlak2: #eeeeee;
+    --tekst: #111111;
+    --tekst-sec: #222222;
+    --tekst-ter: #444444;
+    --accent: #7a5a18;
+    --accent-tekst: #111111;
+    --rand: #cccccc;
+  }
+
+  html,
+  body {
+    background: #fff;
+    color: #111;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  nav.talen,
+  .skip {
+    display: none;
+  }
+}
